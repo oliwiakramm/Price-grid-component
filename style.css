@@ -1,0 +1,320 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+/***** CSS VARIABLES  *****/
+:root {
+  --subscCard-clr: hsl(179, 62%, 43%);
+  --btnComHeading-clr: hsl(71, 73%, 54%);
+  --bgPrimaryTxt-clr: hsl(204, 43%, 93%);
+  --secondaryTxt-clr: hsl(218, 22%, 67%);
+  --offerCard-clr: hsl(179, 46%, 53%);
+}
+
+/***** CSS RESET *****/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/***** SYLING *****/
+
+body {
+  background-color: var(--bgPrimaryTxt-clr);
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  font-family: "Karla", sans-serif;
+}
+
+.main {
+  margin: 2rem 2rem;
+}
+
+.price__card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 20rem;
+}
+
+.card__heading {
+  font-size: 1.23rem;
+  font-weight: 700;
+  color: var(--subscCard-clr);
+  margin-top: 3px;
+}
+
+.card__heading-smaller {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #fff;
+}
+
+/***** COMMUNITY CARD *****/
+
+.community {
+  background-color: #fff;
+  gap: 1.6rem;
+  padding-top: 1.6rem;
+  padding-bottom: 2rem;
+  border-radius: 3px 3px 0 0;
+}
+
+.community .card__heading-smaller {
+  font-size: 0.9rem;
+  color: var(--btnComHeading-clr);
+}
+
+.community__paragraph {
+  color: var(--secondaryTxt-clr);
+  font-size: 0.86rem;
+  line-height: 1.9;
+  margin-top: -10px;
+}
+
+/***** SUBSCRIPTION CARD *****/
+
+.subscription {
+  color: #fff;
+  background-color: var(--subscCard-clr);
+  gap: 1.1rem;
+}
+
+.price__container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.price {
+  font-size: 2rem;
+}
+
+.price + p {
+  opacity: 0.6;
+}
+
+.subscription__paragraph {
+  margin-top: -5px;
+  font-size: 0.97rem;
+  opacity: 0.8;
+}
+
+.sign__btn {
+  margin-top: 0.7rem;
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--btnComHeading-clr);
+  padding: 1rem 1.5rem;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0px 9px 15px 0px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease-in;
+}
+
+.sign__btn:hover,
+.sign__btn:focus {
+  color: var(--btnComHeading-clr);
+  background-color: #fff;
+}
+
+/***** OFFER CARD *****/
+
+.offer {
+  background-color: var(--offerCard-clr);
+  gap: 1.2rem;
+  padding-bottom: 1.7rem;
+  border-radius: 0 0 3px 3px;
+}
+
+.offer__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.offer__list > * {
+  color: #fff;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+@media (min-width: 68em) {
+  .cards__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 39.7rem;
+  }
+
+  .price__card {
+    max-width: none;
+    padding: 2.5rem;
+  }
+
+  .card__heading {
+    font-size: 1.47rem;
+  }
+
+  .community {
+    grid-column: 1 / span 2;
+    border-radius: 8px 8px 0 0;
+    padding-bottom: 2.3rem;
+  }
+
+  .community .card__heading-smaller {
+    font-size: 1.1rem;
+  }
+
+  .community__paragraph {
+    font-size: 0.97rem;
+    line-height: 1.9;
+    margin-top: -20px;
+  }
+
+  .subscription {
+    border-radius: 0 0 0 8px;
+  }
+
+  .offer {
+    border-radius: 0 0 8px 0;
+  }
+}
